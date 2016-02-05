@@ -1,33 +1,45 @@
-
-/**
- * Write a description of class Jugador here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import java.util.ArrayList;
 public class Jugador
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    // Guarda información sobre el número identificativo del jugador
+    private int id;
+    // ArrayList para guardar información sobre las cartas que posee el jugador
+    private ArrayList<Carta> cartasDelJugador;
+    
     /**
-     * Constructor for objects of class Jugador
+     * Este constructor crea un objeto jugador
      */
-    public Jugador()
+    public Jugador(int id)
     {
-        // initialise instance variables
-        x = 0;
+        this.id = id;
+        ArrayList<Carta> cartasDelJugador = new ArrayList<Carta>();
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Método que devuelve el identificador del jugador
      */
-    public int sampleMethod(int y)
+    public int getId()
     {
-        // put your code here
-        return x + y;
+        return id;
+    }
+    
+    /**
+     * Método que agrega la carta "unaCarta" a las que posee el jugador
+     */
+    public void recibirCarta(Carta unaCarta)
+    {
+        cartasDelJugador.add(unaCarta);
+    }
+    
+    /**
+     * Método que devuelve una colección de cadenas con los nombres de las cartas
+     */
+    public ArrayList<String> cartasQueTieneEnLaMano()
+    {
+        ArrayList<String> coleccionString = new ArrayList<String>();
+        for (Carta cartaEnLista : cartasDelJugador) {
+            coleccionString.add(cartaEnLista.getNombre());
+        }
+        return coleccionString;
     }
 }
