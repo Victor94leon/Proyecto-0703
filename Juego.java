@@ -25,7 +25,7 @@ public class Juego
         }
         else {
             while (index<=numeroJugadores) {
-                Jugador nuevoJugador = new Jugador(index);
+                Jugador nuevoJugador = new  Jugador(index);
                 jugadores.add(nuevoJugador);
                 index++;
             }
@@ -40,7 +40,7 @@ public class Juego
      */
     public void repartir()
     {
-        if (mazo.quedan()%jugadores.size() == 0) {
+            if ((mazo.quedan()%jugadores.size())== 0) {
             while (mazo.quedan()!=0) {
                 for (Jugador jugadorEnLista : jugadores) {
                     jugadorEnLista.recibirCarta(mazo.tomarPrimera());
