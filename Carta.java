@@ -25,7 +25,24 @@ public class Carta
      */
     public String getNombre()
     {
-        return valor + " de " + palo;
+        String nombreCompleto = valor + " de " + palo;
+        if(valor == 1)
+        {
+            nombreCompleto = "As de " + palo;
+        }
+        else if(valor == 11)
+        {
+            nombreCompleto = "J de " + palo;
+        }
+        else if(valor == 12)
+        {
+            nombreCompleto = "Q de " + palo;
+        }
+        else if(valor == 13)
+        {
+            nombreCompleto = "K de " + palo;
+        }
+        return nombreCompleto;
     }
     
     /**
