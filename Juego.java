@@ -12,7 +12,7 @@ public class Juego
      */
     public Juego(int numeroJugadores)
     {
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();    
+        jugadores = new ArrayList<Jugador>(); 
         mazo = new Mazo();
         mazo.barajar();
         int index = 1;  
@@ -40,7 +40,7 @@ public class Juego
      */
     public void repartir()
     {
-            if ((mazo.quedan()%jugadores.size())== 0) {
+        if ((mazo.quedan()%jugadores.size())== 0) {
             while (mazo.quedan()!=0) {
                 for (Jugador jugadorEnLista : jugadores) {
                     jugadorEnLista.recibirCarta(mazo.tomarPrimera());

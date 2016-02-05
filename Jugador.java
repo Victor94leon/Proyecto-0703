@@ -1,22 +1,28 @@
 import java.util.ArrayList;
+/**
+ * Write a description of class Jugador here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Jugador
 {
-    // Guarda información sobre el número identificativo del jugador
-    private int id;
-    // ArrayList para guardar información sobre las cartas que posee el jugador
-    private ArrayList<Carta> cartasDelJugador;
+    // Atributo con el id del jugador
+    public int id;
+    // Atributo que guarda la cartasDelJugador del jugador
+    public ArrayList<String> cartasDelJugador;
     
     /**
-     * Este constructor crea un objeto jugador
+     * Constructor de jugadores
      */
     public Jugador(int id)
     {
-        this.id = id;
-        ArrayList<Carta> cartasDelJugador = new ArrayList<Carta>();
+      this.id = id;
+      cartasDelJugador = new ArrayList<String>();
     }
-    
+
     /**
-     * Método que devuelve el identificador del jugador
+     * Metodo que devuelve el id del jugador
      */
     public int getId()
     {
@@ -24,22 +30,17 @@ public class Jugador
     }
     
     /**
-     * Método que agrega la carta "unaCarta" a las que posee el jugador
+     * Metodo que agrega una carta a la cartasDelJugador del jugador
      */
     public void recibirCarta(Carta unaCarta)
     {
-        cartasDelJugador.add(unaCarta);
+        cartasDelJugador.add(unaCarta.getNombre());
     }
     
     /**
-     * Método que devuelve una colección de cadenas con los nombres de las cartas
+     * Metodo que devuelve las cartas que tiene en la cartasDelJugador
      */
-    public ArrayList<String> cartasQueTieneEnLaMano()
-    {
-        ArrayList<String> coleccionString = new ArrayList<String>();
-        for (Carta cartaEnLista : cartasDelJugador) {
-            coleccionString.add(cartaEnLista.getNombre());
-        }
-        return coleccionString;
+    public ArrayList<String> cartasQueTieneEnLaMano(){
+        return cartasDelJugador;
     }
 }
