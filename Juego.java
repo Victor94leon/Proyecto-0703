@@ -16,7 +16,7 @@ public class Juego
         mazo = new Mazo();
         mazo.barajar();
         int index = 1;  
-        if (numeroJugadores<0 || numeroJugadores>8) {
+        if (numeroJugadores<2 || numeroJugadores>8) {
             while (index<=4) {
                 Jugador nuevoJugador = new Jugador(index);
                 jugadores.add(nuevoJugador);
